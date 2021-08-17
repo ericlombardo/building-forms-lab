@@ -6,7 +6,7 @@ class BandsContainer extends Component {
   render() {
     return(
       <div>
-        <BandInput />
+        <BandInput addBand={this.props.addBand}/>
       </div>
     )
   }
@@ -15,7 +15,10 @@ class BandsContainer extends Component {
 // create a prop called addBand that takes in a name concats to store
 const mapDispatch = dispatch => {
   return {
-    addBand: () => dispatch({ type: 'ADD_BAND' })
+    addBand: band => dispatch({ 
+      type: 'ADD_BAND',
+      payload: band,
+     })
   }
 }
 

@@ -16,7 +16,8 @@ class BandInput extends Component {
   handleSubmit = (e) => {
     // call dispatch func. from container via props
     // dispatch needs
-    this.props.addBand(this.state.name)
+    e.preventDefault()
+    return this.props.addBand(this.state.name)
   }
 
   render() {
