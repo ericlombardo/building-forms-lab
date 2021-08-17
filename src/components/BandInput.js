@@ -14,10 +14,9 @@ class BandInput extends Component {
   }
   
   handleSubmit = (e) => {
-    // call dispatch func. from container via props
-    // dispatch needs
     e.preventDefault()
-    return this.props.addBand(this.state.name)
+    this.props.addBand(this.state)
+    this.setState({name: ''})
   }
 
   render() {
@@ -27,10 +26,12 @@ class BandInput extends Component {
           <input 
             onChange={this.handleChange}
             type="text"
+            value={this.state.name}
           />
           <input type="submit" />
         </form>
       </div>
+      
     )
   }
 }
